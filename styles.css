@@ -229,3 +229,12 @@ footer {
 .main {
     background-color: #D0DDD7;
 }
+
+.finanzas-img {
+    /* Set center image */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-bottom: 10px;
+}
