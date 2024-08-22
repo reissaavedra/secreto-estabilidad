@@ -1,55 +1,82 @@
-body {
-    font-family: Arial, sans-serif;
+/* General Styles */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
     color: #333;
 }
 
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header Styles */
 header {
-    background-color: #2c3e50;
-    padding: 10px 0;
+    background-color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+    display: flex;
+    list-style: none;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    padding: 0 1rem;
 }
 
 nav ul li a {
-    color: #fff;
     text-decoration: none;
+    color: #333;
     font-weight: bold;
 }
 
+.logo {
+    height: 40px;
+}
+
+/* Hero Section */
 .hero {
-    background-color: #3498db;
+    background-color: #1E2239;
     color: #fff;
-    padding: 60px 20px;
     text-align: center;
+    padding: 8rem 2rem 4rem;
 }
 
 .hero h1 {
-    margin: 0;
-    font-size: 36px;
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
-.hero p {
-    font-size: 18px;
-    margin: 10px 0 0;
-}
-
+/* Content Section */
 .content {
     padding: 20px;
     max-width: 800px;
     margin: 0 auto;
+}
+
+/* Content Section Adjustments */
+.content {
+    padding-bottom: 60px; /* Ensure there's space above the footer */
 }
 
 .content article {
@@ -57,45 +84,148 @@ nav ul li a {
 }
 
 .content h2 {
-    color: #2980b9;
+    color: #7E846B;
 }
 
+.content ul {
+    list-style-type: none;
+    padding-left: 1rem;
+}
+
+.content li {
+    margin-bottom: 1rem;
+}
+
+.content strong {
+    color: #7E846B;
+}
+
+/* Videos Section */
+.videos {
+    background-color: #f4f4f4;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Footer Styles */
 footer {
-    background-color: #2c3e50;
+    background-color: #1E2239;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
+    padding: 1rem;
+    position: relative;
 }
 
-.instagram-btn:hover {
-    border-color: #C13584;
-}
-
-/* Existing styles... */
-
+/* Instagram Button */
 .instagram-btn {
     position: fixed;
     bottom: 20px;
     right: 20px;
     width: 60px;
     height: 60px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 4px solid #E4405F; /* Instagram border color */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000; /* Ensures the button is on top of other elements */
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
 }
 
 .instagram-btn img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .content, .videos {
+        padding: 2rem 1rem;
+    }
+}
+
+/* Additional Truora-like Styles */
+.cta-button {
+    background-color: #4A90E2;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.feature-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hero, .content, .videos {
+    animation: fadeIn 1s ease-in;
+}
+
+#videos {
+    text-align: center; /* Center the heading and video container */
+    padding: 20px; /* Add some padding around the section */
+}
+
+.video-container {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack iframes vertically */
+    align-items: center; /* Center the iframes horizontally */
+    gap: 20px; /* Space between iframes */
+}
+
+.video-container iframe {
+    width: 100%; /* Make iframe responsive */
+    max-width: 560px; /* Set max width for larger screens */
+    height: auto; /* Maintain aspect ratio */
+    aspect-ratio: 16 / 9; /* Set aspect ratio for the iframe */
+    border: none; /* Remove default border */
+}
+
+.main {
+    background-color: #D0DDD7;
 }
